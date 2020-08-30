@@ -1,6 +1,8 @@
 <h4>APENDICE 1 AL ANEXO 69: DECLARACION JURADA POR COVID-19</h4>
-<span><%= link "New Client", to: Routes.client_path(@conn, :new), class: "btn btn-default pull-rigth" %></span>
 
+<%= if @current_user do %>
+  <span><%= link "Nueva asistencia", to: Routes.client_path(@conn, :new), class: "btn btn-default pull-rigth" %></span>
+<% end %>
 
 <table class="table table-hover">
   <thead>
@@ -11,52 +13,25 @@
       <th scope="col">Edad</th>
       <th scope="col">Contacto</th>
       <th scope="col">DNI</th>
+      <th scope="col">Horario</th>
+
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@foo</td>
-      <td>@bar</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@foo</td>
-      <td>@bar</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@twitter</td>
-      <td>@foo</td>
-      <td>@bar</td>
-    </tr>
-  </tbody>
-</table>
-
-
+ 
 <%= for client <- @clients do %>
     <tr>
+      <td><%= client.id %></td>
       <td><%= client.full_name %></td>
       <td><%= client.address %></td>
       <td><%= client.age %></td>
       <td><%= client.phone %></td>
       <td><%= client.dni %></td>
-      <td><%= client.question1 %></td>
-      <td><%= client.question2 %></td>
-      <td><%= client.question3 %></td>
-      <td><%= client.question4 %></td>
-      <td><%= client.question5 %></td>
-      <td><%= client.question6 %></td>
-      
-      <% if @current_user do %>
+      <td><%= Time.utc_now %></td>
+  </tbody>
+</table>
+
+     <% if @current_user do %>
         <span><%= link "Show", to: Routes.client_path(@conn, :show, client) %></span>
         <span><%= link "Edit", to: Routes.client_path(@conn, :edit, client) %></span>
         <span><%= link "Delete", to: Routes.client_path(@conn, :delete, client), method: :delete, data: [confirm: "Are you sure?"] %></span>

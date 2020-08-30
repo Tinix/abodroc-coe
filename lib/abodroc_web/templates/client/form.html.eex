@@ -5,51 +5,75 @@
     </div>
   <% end %>
 
-  <%= label f, :full_name %>
+  <%= label f, :Nombre_completo %>
   <%= text_input f, :full_name %>
   <%= error_tag f, :full_name %>
 
-  <%= label f, :address %>
+  <%= label f, :direccion %>
   <%= text_input f, :address %>
   <%= error_tag f, :address %>
 
-  <%= label f, :age %>
+  <%= label f, :edad %>
   <%= number_input f, :age %>
   <%= error_tag f, :age %>
 
-  <%= label f, :phone %>
+  <%= label f, :telefono %>
   <%= text_input f, :phone %>
   <%= error_tag f, :phone %>
 
   <%= label f, :dni %>
   <%= text_input f, :dni %>
   <%= error_tag f, :dni %>
+  <hr>
+  <h2>Informaci&oacute;n Historia </h3>
+  <p>Si te respuesta es SI, tildar el casillero, si tu respuestas es NO, dejar en blanco.</p> 
 
-  <%= label f, :question1 %>
-  <%= checkbox f, :question1 %>
+  <p>Has desarrollado en los &uacute;ltimos 5 d&iacute;as episodios febriles,
+  con temperaturas mayores a los 37,5 grados, tenido cefalea diarrea,
+  perdida del olfato o del gusto tos o dificultad respiratoria?</p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si %>
+  <%= checkbox f, :question1  %>
   <%= error_tag f, :question1 %>
 
-  <%= label f, :question2 %>
+  <hr> 
+  <p>En los &uacute;ltimos 14 d&iacute;as, ¿Has estado en contacto con personas
+  sospechosas o confirmadas con COVID-19?</p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si %>
   <%= checkbox f, :question2 %>
   <%= error_tag f, :question2 %>
-
-  <%= label f, :question3 %>
+  
+  <hr>
+  <p>En los &uacute;ltimos 14 d&iacute;as ¿ha permanecido o visitado algunas de los hospitales COVID-19
+  en el &aacute;mbito de la Rep&uacute;blica Argentina</p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si%>
   <%= checkbox f, :question3 %>
   <%= error_tag f, :question3 %>
 
-  <%= label f, :question4 %>
+  <hr>
+  <p>¿Ha regresado de viaje del exterior en los &uacute;ltimos 14 d&iacute;as</p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si %>
   <%= checkbox f, :question4 %>
   <%= error_tag f, :question4 %>
 
-  <%= label f, :question5 %>
+  <hr>
+  <p>¿Ha estado expuesto a grupos humanos numerosos desconocidos sin respetar la distancia social establecida?</p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si %>
   <%= checkbox f, :question5 %>
   <%= error_tag f, :question5 %>
-
-  <%= label f, :question6 %>
+  
+  <hr>
+  <p>¿Permaneci&oacute; en lugares cerrados con grupos humanos numerosos por m&aacute;s de 30 minutos seguidos respetando o no la distancia socila? </p>
+  <p>Si tu respuesta es Si, marca la casilla.</p> 
+  <%= label f, :si %>
   <%= checkbox f, :question6 %>
   <%= error_tag f, :question6 %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Enviar" %>
   </div>
 <% end %>
